@@ -48,7 +48,6 @@ const Theme = {
   }
 
   function classBodyAdd () {
-      console.log(bodyEl.classList)
     if(bodyEl.classList === null){
         bodyEl.classList.remove('null')
         bodyEl.classList.add(Theme.LIGHT)
