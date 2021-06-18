@@ -15,4 +15,4 @@ const e={LIGHT:"light-theme",DARK:"dark-theme"};console.log(e.DARK);const t=docu
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/menu.js"),require("./js/them-switch.js");
 },{"./sass/main.scss":"clu1","./js/menu.js":"i0CD","./js/them-switch.js":"DiDn"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.4fdf1e8d.js.map
+//# sourceMappingURL=/goit-hw-js-10/src.4fdf1e8d.js.map
