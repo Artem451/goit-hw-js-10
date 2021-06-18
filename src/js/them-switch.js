@@ -10,9 +10,10 @@ const Theme = {
   const marker = document.querySelector('.theme-switch__track')
 
   checkBox(themeSwitchButton)
+  classBodyAdd (bodyEl)
   themeSwitchButton.addEventListener('change', themeSwitch)
   themeSwitchButton.addEventListener('change', checkBox)
-  classBodyAdd (bodyEl)
+  
   
   
   function themeSwitch (evnt) {
