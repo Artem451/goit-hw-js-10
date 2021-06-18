@@ -8,11 +8,11 @@ const Theme = {
   const bodyEl = document.querySelector('body')
   const themeSwitchButton = document.querySelector('#theme-switch-toggle')
   const marker = document.querySelector('.theme-switch__track')
-  
+
 
   themeSwitchButton.addEventListener('change', themeSwitch)
 
-  bodyEl.classList.add (localStorage.getItem('theme'))
+//   bodyEl.classList.add (localStorage.getItem('theme'))
   
   
   function themeSwitch (evnt) {
