@@ -20,7 +20,7 @@ const Theme = {
   
   function themeSwitch (evnt) {
     evnt.preventDefault()
-    let savedTheme = bodyEl.classList
+    const savedTheme = bodyEl.classList
     
     
     if(!evnt.target.checked) {
@@ -44,7 +44,7 @@ const Theme = {
   function test () {
       const checkStatus = localStorage.getItem('checked')
       console.log(checkStatus)
-      themeSwitchButton.cheked = checkStatus
+      themeSwitchButton.cheked = Boolean(checkStatus)
   }
 
   function classBodyAdd () {
