@@ -12,7 +12,7 @@ const Theme = {
 
   themeSwitchButton.addEventListener('change', themeSwitch)
 
-//   bodyEl.classList.add (localStorage.getItem('theme'))
+   bodyEl.classList.add (localStorage.getItem('theme'))
   
   
   function themeSwitch (evnt) {
