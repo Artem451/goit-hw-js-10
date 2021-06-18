@@ -11,26 +11,46 @@ const Theme = {
 
 
   themeSwitchButton.addEventListener('change', themeSwitch)
+  themeSwitchButton.addEventListener('change', checkBox)
+  test(themeSwitchButton)
+  classBodyAdd (bodyEl)
 
-  bodyEl.classList.add (localStorage.getItem('theme'))
   
-  themeSwitchButton.setAttribute('checked', localStorage.getItem('checked'))
+  
   
   function themeSwitch (evnt) {
-    event.preventDefault()
-    const savedTheme = bodyEl.classList
-    const savedCheck = evnt.target.checked
+    evnt.preventDefault()
+    let savedTheme = bodyEl.classList
     
-    if(!savedCheck) {
+    
+    if(!evnt.target.checked) {
        bodyEl.classList.add(Theme.LIGHT)
        bodyEl.classList.remove(Theme.DARK)
        
     } else {
-        bodyEl.classList.add(Theme.DARK)
-        bodyEl.classList.remove(Theme.LIGHT)
+       bodyEl.classList.add(Theme.DARK)
+       bodyEl.classList.remove(Theme.LIGHT)
+       
     }
     localStorage.setItem('theme', savedTheme)
-    localStorage.setItem('checked', savedCheck)
   }
   
+  function checkBox (evnt) {
+    let savedCheck = evnt.target.checked
+    localStorage.setItem('checked', savedCheck)
+    
+  }
   
+  function test () {
+      const checkStatus = localStorage.getItem('checked')
+      console.log(checkStatus)
+      themeSwitchButton.cheked = checkStatus
+  }
+
+  function classBodyAdd () {
+      console.log(bodyEl.classList)
+    if(bodyEl.classList === null){
+        bodyEl.classList.remove('null')
+        bodyEl.classList.add(Theme.LIGHT)
+    } else {bodyEl.classList.add (localStorage.getItem('theme'))}
+  }
