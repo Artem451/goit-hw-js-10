@@ -7,25 +7,31 @@ const Theme = {
 
   const bodyEl = document.querySelector('body')
   const themeSwitchButton = document.querySelector('#theme-switch-toggle')
-  
+  const marker = document.querySelector('.theme-switch__track')
+
+  console.log(marker.attributes)
+  console.log(marker.getAttribute('isConnected'))
+
   bodyEl.classList.add (localStorage.getItem('theme'))
-  themeSwitchButton.setAttribute("checked", localStorage.getItem('cheked')) 
-  themeSwitchButton.addEventListener('change', themeSwitch)
   
+  themeSwitchButton.addEventListener('change', themeSwitch)
   
   function themeSwitch (evnt) {
     const savedTheme = bodyEl.classList
     const savedCheck = evnt.target.checked
-    console.log(evnt.target.checked)
+
     if(evnt.target.checked) {
        bodyEl.classList.add(Theme.DARK)
        bodyEl.classList.remove(Theme.LIGHT)
+       
     } else {
         bodyEl.classList.add(Theme.LIGHT)
         bodyEl.classList.remove(Theme.DARK)
+        
     }
     localStorage.setItem('theme', savedTheme)
     localStorage.setItem('cheked', savedCheck)
+
   }
   
   
