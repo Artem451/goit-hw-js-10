@@ -12,8 +12,9 @@ const Theme = {
 
   themeSwitchButton.addEventListener('change', themeSwitch)
 
-   bodyEl.classList.add (localStorage.getItem('theme'))
+  bodyEl.classList.add (localStorage.getItem('theme'))
   
+  themeSwitchButton.setAttribute('checked', localStorage.getItem('checked'))
   
   function themeSwitch (evnt) {
     event.preventDefault()
