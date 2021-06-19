@@ -9,13 +9,10 @@ const Theme = {
   const themeSwitchButton = document.querySelector('#theme-switch-toggle')
   const marker = document.querySelector('.theme-switch__track')
    
-  classBodyAdd (bodyEl)
-  checkBox(themeSwitchButton)
+  classBodyAdd ()
   
   themeSwitchButton.addEventListener('change', themeSwitch)
   themeSwitchButton.addEventListener('change', checkBox)
-  
-  
   
   function themeSwitch (evnt) {
     evnt.preventDefault()
@@ -34,18 +31,14 @@ const Theme = {
     localStorage.setItem('theme', savedTheme)
   }
   
-  
-  
-  function checkBox () {
-     if (localStorage.getItem('theme') === Theme.LIGHT) {
-         themeSwitchButton.checked = false
-     } else {themeSwitchButton.checked = true}
-  }
 
   function classBodyAdd () {
-    if(localStorage.getItem('theme') === null){
-       localStorage.setItem('theme', Theme.LIGHT)
-        bodyEl.classList.remove('null')
-        bodyEl.classList.add(Theme.LIGHT)
-    } else {bodyEl.classList.add (localStorage.getItem('theme'))}
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === Theme.DARK) {
+       bodyEl.classList.add(Theme.DARK)
+       themeSwitchButton.checked = true
+    } else {
+       bodyEl.classList.add(Theme.LIGHT)
+    }
   }
+  
