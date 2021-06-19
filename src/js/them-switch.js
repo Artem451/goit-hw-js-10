@@ -8,9 +8,10 @@ const Theme = {
   const bodyEl = document.querySelector('body')
   const themeSwitchButton = document.querySelector('#theme-switch-toggle')
   const marker = document.querySelector('.theme-switch__track')
-
-  checkBox(themeSwitchButton)
+   
   classBodyAdd (bodyEl)
+  checkBox(themeSwitchButton)
+  
   themeSwitchButton.addEventListener('change', themeSwitch)
   themeSwitchButton.addEventListener('change', checkBox)
   
@@ -42,7 +43,8 @@ const Theme = {
   }
 
   function classBodyAdd () {
-    if(bodyEl.classList === null){
+    if(localStorage.getItem('theme') === null){
+       localStorage.setItem('theme', Theme.LIGHT)
         bodyEl.classList.remove('null')
         bodyEl.classList.add(Theme.LIGHT)
     } else {bodyEl.classList.add (localStorage.getItem('theme'))}
